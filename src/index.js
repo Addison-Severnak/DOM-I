@@ -39,4 +39,24 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
   },
 };
 
-console.log('project wired!')
+console.log('project wired!');
+
+
+//Navbar
+const navLinks = document.querySelectorAll('header nav a');
+const navLinkTexts = Object.values(siteContent.nav);
+
+navLinks.forEach((link, index) => {
+  link.textContent = navLinkTexts[index]
+  link.classList.add('italic');
+});
+
+//CTA
+document.querySelector('.cta .cta-text h1').textContent = siteContent.cta.h1;
+document.querySelector('.cta .cta-text button').textContent = siteContent.cta.button;
+
+const logoImg = document.querySelector('#logo-img');
+logoImg.src = siteContent.images["logo-img"];
+
+const ctaImg = document.querySelector('#cta-img');
+ctaImg.src = siteContent.images["cta-img"];
